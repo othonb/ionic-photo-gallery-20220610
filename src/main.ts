@@ -4,6 +4,12 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 
+import { defineCustomElements } from '@ionic/pwa-elements/loader';
+
+// Chamar o carregador de elemento depois que a plataforma inicia
+defineCustomElements(window);
+
+
 if (environment.production) {
   enableProdMode();
 }
